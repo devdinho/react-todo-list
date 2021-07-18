@@ -2,8 +2,19 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const Forms = styled.form`
+  display: flex;
+  gap: 4px;
   border: 1px solid;
   padding: 10px 25px;
+  background: red;
+`;
+
+const Input = styled.input`
+  padding: 6px 10px;
+`;
+
+const Button = styled.button`
+  font-size: 1rem;
 `;
 
 export default class Form extends Component {
@@ -23,13 +34,8 @@ export default class Form extends Component {
     const { todo } = this.state;
     return (
       <Forms>
-        <input
-          value={ todo }
-          onChange={ this.handleChange }
-          type="text"
-          placeholder="Task"
-        />
-        <button type="button">Add</button>
+        <Input onChange={ this.handleChange }/>
+        <Button type="button">Add</Button>
       </Forms>
     );
   }
