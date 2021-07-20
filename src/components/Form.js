@@ -6,12 +6,13 @@ const Forms = styled.form`
   gap: 4px;
   border: 1px solid;
   padding: 10px 25px;
-  background: red;
+  background: gold;
 `;
 
 const Input = styled.input`
   padding: 6px 10px;
 `;
+
 
 const Button = styled.button`
   font-size: 1rem;
