@@ -1,4 +1,6 @@
-import Form from './components/Form';
+import React, { Component } from 'react'
+import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
 import styled from 'styled-components';
 
 const TodoContainer = styled.div`
@@ -9,13 +11,26 @@ const TodoContainer = styled.div`
   align-items: center;
 `;
 
-function App() {
-  return (
-    <TodoContainer>
-      <h1>Todo List</h1>
-      <Form/>
-    </TodoContainer>
-  );
+const H1 = styled.h1`
+  letter-spacing: 2px;
+`;
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      todos: [],
+    };
+  }
+  render() {
+    return (
+      <TodoContainer>
+        <H1>Todo List</H1>
+        <TodoForm/>
+        <TodoList />
+      </TodoContainer>
+    );
+  }
 }
 
 export default App;
