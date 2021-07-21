@@ -45,16 +45,17 @@ export default class TodoForm extends Component {
 
   render() {
     const { todo } = this.state;
+
     return (
       <Forms>
         <Input
           value={ todo }
           onChange={ this.handleChange }
-          placeholder='Add task'
+          placeholder="Add task"
           autoFocus
         />
         <Button
-          onClick={ this.submitTodo }
+          onClick={ todo ? this.submitTodo : null }
           type="button"
         >
             Add
