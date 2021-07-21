@@ -33,21 +33,25 @@ export default class TodoForm extends Component {
 
   handleChange = (e) => {
     const { value } = e.target;
-    this.setState({ todo: value });
+    this.setState(() => ({ todo: value }));
   }
 
   submitTodo = () => {
-    const { todo } = this.state;
     const { addTodo } = this.props;
+    const { todo } = this.state;
     addTodo(todo);
+    this.setState({ todo: '' });
   }
 
   render() {
+    const { todo } = this.state;
     return (
       <Forms>
         <Input
+          value={ todo }
           onChange={ this.handleChange }
           placeholder='Add task'
+          autoFocus
         />
         <Button
           onClick={ this.submitTodo }

@@ -1,10 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import styled from 'styled-components';
+
+const TodoLi = styled.li`
+  list-style: none;
+`;
 
 export default class Todo extends Component {
   render() {
-    return (
-      <div className="todo__li">
-      </div>
-    )
+    const { children } = this.props;
+    return <TodoLi>{ children }</TodoLi>
   }
 }

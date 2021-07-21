@@ -4,11 +4,12 @@ import TodoList from './components/TodoList';
 import styled from 'styled-components';
 
 const TodoContainer = styled.div`
+  align-items: center;
+  border: 1px solid;
   display: flex;
   flex-direction: column;
-  border: 1px solid;
+  gap: 10px;
   min-height: 100vh;
-  align-items: center;
 `;
 
 const H1 = styled.h1`
@@ -22,12 +23,20 @@ class App extends Component {
       todos: [],
     };
   }
+
+  addTodo = (todo) => {
+    this.setState({
+      todos: [...this.state.todos, todo],
+    });
+  }
+
   render() {
+    const { todos } = this.state;
     return (
       <TodoContainer>
         <H1>Todo List</H1>
-        <TodoForm/>
-        <TodoList />
+        <TodoForm addTodo={ this.addTodo } />
+        <TodoList todos={ todos } />
       </TodoContainer>
     );
   }
