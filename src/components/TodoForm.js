@@ -27,7 +27,7 @@ export default class TodoForm extends Component {
   constructor() {
     super();
     this.state = {
-      todo: '',
+      todo: "",
     };
   }
 
@@ -40,7 +40,7 @@ export default class TodoForm extends Component {
     const { addTodo } = this.props;
     const { todo } = this.state;
     addTodo(todo);
-    this.setState({ todo: '' });
+    this.setState({ todo: "" });
   }
 
   render() {
